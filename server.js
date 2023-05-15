@@ -1,7 +1,8 @@
 const express=require("express");
 const app=express();
 const db_connect=require("./db_connect");
-require("dotenv").config();
+require("dotenv").config({path: "./vars/.env"});
+// dotenv.config({path: "./vars/.env"});
 app.use(express.json());
 app.use("/person",require("./routes/person"));
 db_connect();
